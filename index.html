@@ -5,6 +5,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <style>
+    .water-tank-foot {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .water-tank-foot .price {
+      font-size: 1.4rem;
+    }
+
+    .tank-features {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .tank-features p {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .water-tank-foot .btn {
+      margin-top: 4px;
+    }
+
     :root {
       color-scheme: light
     }
@@ -587,6 +615,86 @@
         transition: none;
       }
     }
+
+
+    /* Water tank service feature cards */
+    .water-tank-card {
+      grid-column: 1 / -1;
+      gap: 14px;
+    }
+
+    .tank-price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 16px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .tank-price .price {
+      font-size: 1.8rem;
+      color: var(--fg);
+    }
+
+    .tank-unit {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .tank-feature-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      width: 100%;
+    }
+
+    .tank-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      min-width: 0;
+      padding: 16px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .tank-feature p {
+      color: var(--muted);
+      margin: 0;
+      font-size: .95rem;
+      line-height: 1.5;
+    }
+
+    .feature-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--leaf);
+      color: white;
+      font-weight: 800;
+    }
+
+    .tank-booking {
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 650px) {
+      .tank-feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .tank-feature {
+        padding: 12px;
+      }
+    }
   </style>
 </head>
 
@@ -709,15 +817,37 @@
             <div class="foot"><a class="btn sm call" href="tel:+919392832609" data-service="Sell my old AC">Book a
                 call</a></div>
           </article>
-          <article class="card" style="grid-column: 1 / -1;">
+          <article class="card water-tank-card">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11Z" />
               </svg></div>
             <h3>Water tank cleaning service</h3>
             <p>Professional cleaning for your home water tank with safe, eco-friendly solutions.</p>
-            <div class="foot"><span class="price">From ₹899 <small>per tank</small></span><a class="btn sm call"
-                href="tel:+919392832609" data-service="Water tank cleaning">Book a call</a></div>
+
+            <div class="tank-price">
+              <span class="price">₹899</span>
+              <span class="tank-unit">per tank (10 X 10 Size)</span>
+            </div>
+
+            <div class="tank-feature-list">
+              <div class="tank-feature">
+                <span class="feature-icon" aria-hidden="true">✓</span>
+                <p>Cleaning, disinfecting and deodorizing</p>
+              </div>
+              <div class="tank-feature">
+                <span class="feature-icon" aria-hidden="true">✓</span>
+                <p>Anti-bacterial cleaning to remove bacteria, algae and dirt</p>
+              </div>
+              <div class="tank-feature">
+                <span class="feature-icon" aria-hidden="true">✓</span>
+                <p>UV sterilization for enhanced hygiene</p>
+              </div>
+            </div>
+
+            <div class="foot tank-booking">
+              <a class="btn sm call" href="tel:+919392832609" data-service="Water tank cleaning">Book a call</a>
+            </div>
           </article>
         </div>
       </section>
